@@ -62,61 +62,61 @@
 				var page = 0;
 				var currentBt = null;
 
-				// 图片张数
+				// 圖片張數
 				var arr1 = [12, 80, 39, 27, 23, 55];
-				// 图片前缀
+				// 圖片前綴
 				var arr2 = ['cymbal', 'drink', 'eat', 'fart', 'pie', 'scratch'];
 
-				// 点击操作
+				// 點擊操作
 				for(var i = 0; i < aBt.length; i++) {
 					aBt[i].index = i;
 
 					aBt[i].onclick = function() {
-						// 停止时钟
+						// 停止時鐘
 						stopTimer();
 
-						// 哪个按钮点击
+						// 哪個按鈕點擊
 						currentBt = this;
 
-						// 开始时钟
+						// 開始時鐘
 						startTimer();
 					}
 				}
 
-				// 开启时钟
+				// 開啟時鐘
 				function startTimer() {
 					if(timer == null) {
 						timer = setInterval(upDate, 100);
 					}
 				}
 
-				// 停止时钟
+				// 停止時鐘
 				function stopTimer() {
 					clearInterval(timer);
 					timer = null;
 				}
 
-				// 时钟事件
+				// 時鐘事件
 				function upDate() {
 					page++;
 					changeView();
 				}
 
-				// 改变视图
+				// 改變視圖
 				function changeView() {
-					// 图片张数
+					// 圖片張數
 					if(page > arr1[currentBt.index]) {
 						page = 0;
 						stopTimer();
 					}
 
-					// 图片名称
+					// 圖片名稱
 					oImg.src = arr2[currentBt.index] + '/' + arr2[currentBt.index] + '_' + format(page, 2) + '.jpg';
 				}
 
 				/* 格式化
-				 * index: 数字
-				 * num: 位数
+				 * index:數字
+				 * num: 位數
 				 */
 				function format(index, num) {
 					var str = index.toString();
@@ -135,7 +135,7 @@
 			<img src="angry/angry_00.jpg" class="bigImg" />
 
 			<a href="#" class="bt bt1"> <img src="Buttons/cymbal.png" /> </a>
-			<a href="#" class="bt bt2"> <img src="/Buttons/drink.png" /> </a>
+			<a href="#" class="bt bt2"> <img src="Buttons/drink.png" /> </a>
 			<a href="#" class="bt bt3"> <img src="Buttons/eat.png" /> </a>
 			<a href="#" class="bt bt4"> <img src="Buttons/fart.png" /> </a>
 			<a href="#" class="bt bt5"> <img src="Buttons/pie.png" /> </a>
